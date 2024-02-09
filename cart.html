@@ -122,11 +122,25 @@ document.addEventListener("DOMContentLoaded", function() {
     customButton.addEventListener("click", function() {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-            event: "click_mais"
+            event: "click_add"
         });
     });
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const customButton = document.querySelector(".btn btn-black btn-sm");
+
+    customButton.addEventListener("click", function() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "click_remove"
+        });
+    });
+});
+</script>
+
 
 	
 
