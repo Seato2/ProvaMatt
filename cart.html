@@ -116,22 +116,12 @@
 
 
 	<script>
-		document.querySelector("btn btn-outline-black increase").addEventListener("click", function () {
-			window.dataLayer = window.dataLayer || [];
-			window.dataLayer.push({
-				event: "gtm.click"
-			});
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			event: "gtm.click"
 		});
 	</script>
 
-	<script>
-		document.querySelector("btn btn-black btn-sm").addEventListener("click", function () {
-			window.dataLayer = window.dataLayer || [];
-			window.dataLayer.push({
-				event: "gtm.click"
-			});
-		});
-	</script>
 
 
 	<!-- Google Tag Manager -->
