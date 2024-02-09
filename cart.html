@@ -115,34 +115,24 @@
 	</script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const customButton = document.querySelector(".btn btn-outline-black increase");
+	<script>
+		document.querySelector(".btn btn-outline-black increase").addEventListener("click", function () {
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				event: "click_add"
+			});
+		});
+	</script>
 
-    customButton.addEventListener("click", function() {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: "click_add"
-        });
-    });
-});
-</script>
+	<script>
+		document.querySelector("btn btn-black btn-sm").addEventListener("click", function () {
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				event: "click_remove"
+			});
+		});
+	</script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const customButton = document.querySelector(".btn btn-black btn-sm");
-
-    customButton.addEventListener("click", function() {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: "click_remove"
-        });
-    });
-});
-</script>
-
-
-	
 
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
