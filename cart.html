@@ -86,20 +86,44 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Selecione o botão
-    var botao = document.querySelector(".btn.btn-black.btn-sm");
+    // Selecione todos os botões com a classe ".btn.btn-black.btn-sm"
+    var botoes = document.querySelectorAll(".btn.btn-black.btn-sm");
 
-    // Adicione o eventListener para o clique
-    botao.addEventListener("click", function() {
-        // Push para o DataLayer
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'botaoClicado',
-            'botao': 'btn_black_btn_sm'
+    // Iterar sobre todos os botões e adicionar o eventListener para cada um
+    for (var i = 0; i < botoes.length; i++) {
+        botoes[i].addEventListener("click", function() {
+            // Adicionar push para o DataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'remove_from_cart',
+                'ecommerce': {
+                    'currency': 'USD',
+                    'value': 30.03,
+                    'items': [{
+                        'item_id': 'SKU_12345',
+                        'item_name': 'Stan and Friends Tee',
+                        'affiliation': 'Google Merchandise Store',
+                        'coupon': 'SUMMER_FUN',
+                        'discount': 2.22,
+                        'index': 0,
+                        'item_brand': 'Google',
+                        'item_category': 'Apparel',
+                        'item_category2': 'Adult',
+                        'item_category3': 'Shirts',
+                        'item_category4': 'Crew',
+                        'item_category5': 'Short sleeve',
+                        'item_list_id': 'related_products',
+                        'item_list_name': 'Related Products',
+                        'item_variant': 'green',
+                        'location_id': 'ChIJIQBpAG2ahYAR_6128GcTUEo',
+                        'price': 10.01,
+                        'quantity': 3
+                    }]
+                }
+            });
+            alert("O item foi removido do carrinho!");
         });
-        // Aqui você pode adicionar qualquer outra ação desejada após o clique do botão
-        alert("O botão foi clicado!");
-    });
+    }
 });
 </script>
 
